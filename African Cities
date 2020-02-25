@@ -1,0 +1,9 @@
+Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT c.NAME
+FROM CITY AS c
+JOIN COUNTRY AS ct
+ON ct.CODE = c.COUNTRYCODE
+WHERE ct.CONTINENT = 'Africa';
