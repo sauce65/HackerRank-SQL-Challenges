@@ -1,0 +1,10 @@
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT SUM(a.pop)
+FROM (SELECT c.COUNTRYCODE, c.POPULATION AS pop, ct.CONTINENT
+FROM CITY AS c
+JOIN COUNTRY AS ct
+ON ct.CODE = c.COUNTRYCODE
+WHERE ct.CONTINENT = 'Asia') AS a;
